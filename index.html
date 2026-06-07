@@ -123,6 +123,10 @@
       line-height: 1.75;
       font-size: 1.02rem;
     }
+    .tariff-outside {
+      margin-top: 1.25rem;
+      text-align: center;
+    }
     .offer-title {
       margin: 0 0 .4rem;
       font-size: 1.4rem;
@@ -132,38 +136,41 @@
       margin: 0;
       text-align: center;
     }
+    .hero-line {
+      text-align: center;
+    }
     .muted { color: var(--muted); }
     .price-list {
       display: grid;
-      gap: .5rem;
-      margin-top: .8rem;
+      gap: .8rem;
+      margin-top: 1rem;
     }
     .price-row {
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: .45rem;
-      padding: .6rem .9rem;
-      border-radius: 16px;
+      gap: .8rem;
+      padding: 1rem 1.15rem;
+      border-radius: 18px;
       background: rgba(255, 255, 255, .04);
       border: 1px solid rgba(255, 255, 255, .08);
-      width: min(100%, 420px);
+      width: min(100%, 520px);
       margin-inline: auto;
     }
     .price-row strong {
       flex: 0 0 auto;
-      font-size: 1.2rem;
+      font-size: 1.45rem;
       letter-spacing: .01em;
     }
     .price-row span {
       color: var(--accent);
       font-weight: 900;
-      font-size: 1.2rem;
+      font-size: 1.45rem;
       white-space: nowrap;
     }
     .price-arrow {
       color: var(--muted);
-      font-size: 1rem;
+      font-size: 1.3rem;
       font-weight: 700;
     }
     .contact {
@@ -237,7 +244,9 @@
               <span>1500 DH</span>
             </div>
           </div>
-          <h3 class="tariff-title" style="margin-top: 1.4rem;">Domiciliation professionnelle pour comptables agréés.</h3>
+        </div>
+        <div class="tariff-outside">
+          <h3 class="tariff-title">Domiciliation professionnelle pour comptables agréés.</h3>
           <p class="tariff-copy">
             Une solution simple, claire et professionnelle pour installer votre activité avec une adresse reconnue
             et des tarifs adaptés à la durée choisie.
