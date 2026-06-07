@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Centirio - Offre de domiciliation pour comptables agréés." />
-  <title>Centirio | Offre de domiciliation</title>
+  <meta name="description" content="Centre d'Affaires -- Centirio - Offre de domiciliation pour comptables agréés." />
+  <title>Centre d'Affaires -- Centirio | Offre de domiciliation</title>
   <style>
     :root {
       --bg: #07111f;
@@ -55,6 +55,7 @@
       letter-spacing: .02em;
     }
     .brand-mark {
+      position: relative;
       width: 44px;
       height: 44px;
       border-radius: 14px;
@@ -64,15 +65,25 @@
       color: #07111f;
       font-size: 1.15rem;
       box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .brand-icon {
+      position: absolute;
+      display: grid;
+      place-items: center;
+      inset: 0;
+      color: #07111f;
+      font-size: 1.35rem;
+      font-weight: 900;
     }
     .hero {
       padding: 4.5rem 0 2rem;
     }
     .hero-panel {
-      padding: 1.6rem;
-      border-radius: calc(var(--radius) + 6px);
-      background: linear-gradient(180deg, rgba(16, 28, 54, 0.96), rgba(10, 19, 38, 0.95));
-      border: 1px solid var(--line);
+      padding: 1.9rem;
+      border-radius: calc(var(--radius) + 8px);
+      background: linear-gradient(180deg, rgba(16, 28, 54, 0.98), rgba(10, 19, 38, 0.97));
+      border: 1px solid rgba(79, 209, 197, 0.28);
       box-shadow: var(--shadow);
     }
     .eyebrow {
@@ -81,10 +92,19 @@
       gap: .5rem;
       padding: .45rem .8rem;
       border-radius: 999px;
-      background: rgba(255, 255, 255, .06);
-      border: 1px solid var(--line);
-      color: var(--muted);
+      background: linear-gradient(135deg, rgba(79, 209, 197, .16), rgba(124, 140, 255, .16));
+      border: 1px solid rgba(79, 209, 197, .28);
+      color: #eef4ff;
       font-size: .92rem;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, .18);
+      display: block;
+      width: fit-content;
+      margin: 0 auto;
+      animation: glowPulse 3.5s ease-in-out infinite;
+    }
+    @keyframes glowPulse {
+      0%, 100% { transform: translateY(0); box-shadow: 0 10px 24px rgba(0, 0, 0, .18); }
+      50% { transform: translateY(-1px); box-shadow: 0 14px 28px rgba(79, 209, 197, .16); }
     }
     h1 {
       font-size: clamp(2rem, 4vw, 3.2rem);
@@ -101,76 +121,85 @@
     .panel, .card {
       border-radius: var(--radius);
       background: var(--panel);
-      border: 1px solid var(--line);
+      border: 1px solid rgba(124, 140, 255, 0.22);
       box-shadow: var(--shadow);
     }
-    .panel { padding: 1.35rem; }
-    .card { padding: 1.25rem; }
+    .panel { padding: 1.45rem; }
+    .card { padding: 1rem 1.1rem; }
     .block-title {
       margin-top: 0;
       color: var(--brand);
-      font-size: 1.3rem;
+      font-size: 1.55rem;
       letter-spacing: .01em;
+      text-align: center;
     }
     .tariff-title {
-      margin: 0 0 .35rem;
-      font-size: 2rem;
+      margin: 0 0 .4rem;
+      font-size: 2.1rem;
       line-height: 1.1;
+      color: var(--brand);
     }
     .tariff-copy {
-      margin: .9rem 0 0;
-      color: var(--muted);
-      line-height: 1.75;
-      font-size: 1.02rem;
+      margin: .9rem auto 0;
+      color: #dbe7ff;
+      line-height: 1.8;
+      font-size: 1.06rem;
+      max-width: 55ch;
     }
     .tariff-outside {
-      margin-top: 1.25rem;
+      margin-top: 1.4rem;
       text-align: center;
     }
     .offer-title {
       margin: 0 0 .4rem;
-      font-size: 1.4rem;
+      font-size: 2rem;
       text-align: center;
+      color: var(--accent);
     }
     .offer-subtitle {
       margin: 0;
       text-align: center;
+      color: var(--brand-2);
     }
     .hero-line {
       text-align: center;
     }
+    .highlight-yellow {
+      color: var(--accent);
+    }
     .muted { color: var(--muted); }
     .price-list {
       display: grid;
-      gap: .8rem;
+      gap: .95rem;
       margin-top: 1rem;
     }
     .price-row {
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: .8rem;
-      padding: 1rem 1.15rem;
-      border-radius: 18px;
-      background: rgba(255, 255, 255, .04);
-      border: 1px solid rgba(255, 255, 255, .08);
-      width: min(100%, 520px);
+      gap: .95rem;
+      padding: 1.08rem 1.2rem;
+      border-radius: 20px;
+      background: linear-gradient(135deg, rgba(79, 209, 197, 0.10), rgba(124, 140, 255, 0.08));
+      border: 1px solid rgba(79, 209, 197, .22);
+      width: min(100%, 560px);
       margin-inline: auto;
     }
     .price-row strong {
       flex: 0 0 auto;
-      font-size: 1.45rem;
+      font-size: 1.55rem;
       letter-spacing: .01em;
+      color: #f4f8ff;
     }
     .price-row span {
       color: var(--accent);
       font-weight: 900;
-      font-size: 1.45rem;
+      font-size: 1.55rem;
       white-space: nowrap;
     }
     .price-arrow {
-      color: var(--muted);
-      font-size: 1.3rem;
+      color: var(--brand);
+      font-size: 1.35rem;
       font-weight: 700;
     }
     .contact {
@@ -189,6 +218,14 @@
     .address {
       font-weight: 800;
       color: #fff;
+      text-align: center;
+    }
+    .phone-plain {
+      margin: 0;
+      text-align: center;
+      color: #f4f8ff;
+      font-size: 1.15rem;
+      font-weight: 700;
     }
     .split-grid {
       display: grid;
@@ -209,11 +246,13 @@
 </head>
 <body>
   <header class="topbar">
-    <div class="container topbar-inner">
-      <div class="brand" aria-label="Centirio">
-        <span class="brand-mark">C</span>
-        <span>Centirio</span>
-      </div>
+      <div class="container topbar-inner">
+        <div class="brand" aria-label="Centre d'Affaires -- Centirio">
+          <span class="brand-mark" aria-hidden="true">
+            <span class="brand-icon">🏢</span>
+          </span>
+          <span>Centre d'Affaires -- Centirio</span>
+        </div>
       <div class="muted">Offre de domiciliation pour comptables agréés</div>
     </div>
   </header>
@@ -221,8 +260,8 @@
   <main class="hero">
     <div class="container">
       <section class="hero-panel">
-        <span class="eyebrow">Centre d’Affaires • Offre unique</span>
-        <h1>Offre de domiciliation pour comptables agréés.</h1>
+        <span class="eyebrow">Centre d’Affaires • Offre du Mois</span>
+        <h1>Offre de domiciliation pour <span class="highlight-yellow">comptables agréés</span>.</h1>
         <p class="hero-line">Découvrez ci-dessous nos tarifs de domiciliation selon la durée choisie.</p>
         <div style="margin-top: 1.3rem;" class="panel" aria-label="Tarifs de l'offre">
           <h2 class="offer-title">Domiciliation</h2>
@@ -257,20 +296,16 @@
   </main>
 
     <section>
-        <div class="container split-grid">
-          <div class="card">
-            <h2 class="block-title">Adresse</h2>
-            <p class="address">
-              HAY MOULAY ABDELLAH, RUE 300, 2EME ETAGE, N 152, AIN CHOCK CASABLANCA
-            </p>
-          </div>
-          <div class="card">
-            <h2 class="block-title">Téléphone</h2>
-            <div class="contact">
-              <div class="contact-item">
-                <strong>0663 161 336</strong>
-              </div>
-          </div>
+      <div class="container split-grid">
+        <div class="card">
+          <h2 class="block-title">Adresse</h2>
+          <p class="address">
+            HAY MOULAY ABDELLAH, RUE 300, 2EME ETAGE, N 152, AIN CHOCK CASABLANCA
+          </p>
+        </div>
+        <div class="card">
+          <h2 class="block-title">Téléphone</h2>
+          <p class="phone-plain"><strong>0663 161 336</strong></p>
         </div>
       </div>
     </section>
@@ -289,7 +324,7 @@
     </section>
   
   <footer class="footer">
-    <div class="container">© <span id="year"></span> Centirio</div>
+    <div class="container">© <span id="year"></span> Centre d'Affaires -- Centirio</div>
   </footer>
 
   <script>
