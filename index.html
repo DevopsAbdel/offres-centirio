@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Centirio - Offre de domiciliation pour comptables agréés." />
+  <title>Centirio | Offre de domiciliation</title>
+  <style>
+    :root {
+      --bg: #07111f;
+      --panel: rgba(16, 28, 54, 0.92);
+      --line: rgba(255, 255, 255, 0.1);
+      --text: #ecf3ff;
+      --muted: #b7c3de;
+      --brand: #4fd1c5;
+      --brand-2: #7c8cff;
+      --accent: #ffd166;
+      --shadow: 0 18px 50px rgba(0, 0, 0, 0.28);
+      --radius: 24px;
+      --max: 980px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(79, 209, 197, 0.14), transparent 28%),
+        radial-gradient(circle at top right, rgba(124, 140, 255, 0.16), transparent 30%),
+        linear-gradient(180deg, #07111f, #0b1730);
+    }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(var(--max), calc(100% - 2rem)); margin-inline: auto; }
+    .topbar {
+      padding: 1.25rem 0;
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(12px);
+      background: rgba(7, 17, 31, 0.72);
+      position: sticky;
+      top: 0;
+      z-index: 5;
+    }
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: .85rem;
+      font-weight: 800;
+      letter-spacing: .02em;
+    }
+    .brand-mark {
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--brand), var(--brand-2));
+      color: #07111f;
+      font-size: 1.15rem;
+      box-shadow: var(--shadow);
+    }
+    .hero {
+      padding: 4.5rem 0 2rem;
+    }
+    .hero-panel {
+      padding: 1.6rem;
+      border-radius: calc(var(--radius) + 6px);
+      background: linear-gradient(180deg, rgba(16, 28, 54, 0.96), rgba(10, 19, 38, 0.95));
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .45rem .8rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .06);
+      border: 1px solid var(--line);
+      color: var(--muted);
+      font-size: .92rem;
+    }
+    h1 {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 1.1;
+      margin: .9rem auto 1rem;
+      text-align: center;
+    }
+    .hero-line {
+      font-size: 1.06rem;
+      color: var(--muted);
+      line-height: 1.8;
+      margin: 0;
+    }
+    .panel, .card {
+      border-radius: var(--radius);
+      background: var(--panel);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+    .panel { padding: 1.35rem; }
+    .card { padding: 1.25rem; }
+    .block-title {
+      margin-top: 0;
+      color: var(--brand);
+      font-size: 1.3rem;
+      letter-spacing: .01em;
+    }
+    .tariff-title {
+      margin: 0 0 .35rem;
+      font-size: 2rem;
+      line-height: 1.1;
+    }
+    .tariff-copy {
+      margin: .9rem 0 0;
+      color: var(--muted);
+      line-height: 1.75;
+      font-size: 1.02rem;
+    }
+    .offer-title {
+      margin: 0 0 .4rem;
+      font-size: 1.4rem;
+      text-align: center;
+    }
+    .offer-subtitle {
+      margin: 0;
+      text-align: center;
+    }
+    .muted { color: var(--muted); }
+    .price-list {
+      display: grid;
+      gap: .5rem;
+      margin-top: .8rem;
+    }
+    .price-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .45rem;
+      padding: .6rem .9rem;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, .04);
+      border: 1px solid rgba(255, 255, 255, .08);
+      width: min(100%, 420px);
+      margin-inline: auto;
+    }
+    .price-row strong {
+      flex: 0 0 auto;
+      font-size: 1.2rem;
+      letter-spacing: .01em;
+    }
+    .price-row span {
+      color: var(--accent);
+      font-weight: 900;
+      font-size: 1.2rem;
+      white-space: nowrap;
+    }
+    .price-arrow {
+      color: var(--muted);
+      font-size: 1rem;
+      font-weight: 700;
+    }
+    .contact {
+      display: grid;
+      gap: .75rem;
+      margin-top: 1rem;
+    }
+    .contact-item {
+      padding: .9rem 1rem;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, .04);
+      border: 1px solid rgba(255, 255, 255, .08);
+      line-height: 1.7;
+    }
+    .contact-item strong { color: #fff; }
+    .address {
+      font-weight: 800;
+      color: #fff;
+    }
+    .split-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+    .footer {
+      padding: 1.5rem 0 2.5rem;
+      color: var(--muted);
+      text-align: center;
+    }
+    @media (max-width: 840px) {
+      .split-grid { grid-template-columns: 1fr; }
+      .topbar-inner { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand" aria-label="Centirio">
+        <span class="brand-mark">C</span>
+        <span>Centirio</span>
+      </div>
+      <div class="muted">Offre de domiciliation pour comptables agréés</div>
+    </div>
+  </header>
+
+  <main class="hero">
+    <div class="container">
+      <section class="hero-panel">
+        <span class="eyebrow">Centre d’Affaires • Offre unique</span>
+        <h1>Offre de domiciliation pour comptables agréés.</h1>
+        <p class="hero-line">Découvrez ci-dessous nos tarifs de domiciliation selon la durée choisie.</p>
+        <div style="margin-top: 1.3rem;" class="panel" aria-label="Tarifs de l'offre">
+          <h2 class="offer-title">Domiciliation</h2>
+          <p class="muted offer-subtitle">Tarifs selon la durée d’engagement :</p>
+          <div class="price-list">
+            <div class="price-row">
+              <strong>6 Mois</strong>
+              <span class="price-arrow">→</span>
+              <span>500 DH</span>
+            </div>
+            <div class="price-row">
+              <strong>12 Mois</strong>
+              <span class="price-arrow">→</span>
+              <span>800 DH</span>
+            </div>
+            <div class="price-row">
+              <strong>24 Mois</strong>
+              <span class="price-arrow">→</span>
+              <span>1500 DH</span>
+            </div>
+          </div>
+          <h3 class="tariff-title" style="margin-top: 1.4rem;">Domiciliation professionnelle pour comptables agréés.</h3>
+          <p class="tariff-copy">
+            Une solution simple, claire et professionnelle pour installer votre activité avec une adresse reconnue
+            et des tarifs adaptés à la durée choisie.
+          </p>
+        </div>
+      </section>
+    </div>
+  </main>
+
+    <section>
+        <div class="container split-grid">
+          <div class="card">
+            <h2 class="block-title">Adresse</h2>
+            <p class="address">
+              HAY MOULAY ABDELLAH, RUE 300, 2EME ETAGE, N 152, AIN CHOCK CASABLANCA
+            </p>
+          </div>
+          <div class="card">
+            <h2 class="block-title">Téléphone</h2>
+            <div class="contact">
+              <div class="contact-item">
+                <strong>0663 161 336</strong>
+              </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container split-grid">
+        <div class="card">
+          <h2 class="block-title">Adresse DGI</h2>
+          <p class="address">Hay Hassani</p>
+        </div>
+        <div class="card">
+          <h2 class="block-title">Adresse CNSS</h2>
+          <p class="address">Hay Inara, Bd Al Qods, Ain Chock</p>
+        </div>
+      </div>
+    </section>
+  
+  <footer class="footer">
+    <div class="container">© <span id="year"></span> Centirio</div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
